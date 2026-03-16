@@ -1,16 +1,31 @@
 package de.lucamaximal.homiecraft.util;
 
 import de.lucamaximal.homiecraft.Main;
-import org.bukkit.ChatColor;
+import me.clip.placeholderapi.PlaceholderAPI;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
+import org.bukkit.entity.Player;
 
 public class MessageUtils {
 
-    public static String getMessage(String path) {
+    private static final MiniMessage miniMessage = MiniMessage.miniMessage();
 
-        String prefix = Main.getInstance().getConfig().getString("messages.prefix");
+    public static Component getMessage(String path, Player player) {
+
+        String prefix = Main.getInstance().getConfig().getString(Messages.PREFIX);
         String message = Main.getInstance().getConfig().getString(path);
 
-        return ChatColor.translateAlternateColorCodes('&', prefix + message);
+        if (prefix == null) prefix = "";
+        if (message == null) message = "";
+
+        String finalMessage = prefix + message;
+
+        // PlaceholderAPI Support
+        if (player != null && Main.getInstance().getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            finalMessage = PlaceholderAPI.setPlaceholders(player, finalMessage);
+        }
+
+        return miniMessage.deserialize(finalMessage);
     }
 
 }
