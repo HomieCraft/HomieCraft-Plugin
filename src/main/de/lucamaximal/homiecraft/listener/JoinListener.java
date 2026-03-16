@@ -1,20 +1,13 @@
-package de.lucamaximal.homiecraft.listener;
+@EventHandler
+public void onJoin(PlayerJoinEvent event) {
 
-import de.lucamaximal.homiecraft.util.MessageUtils;
-import de.lucamaximal.homiecraft.util.Messages;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
+    if(!event.getPlayer().hasPlayedBefore()) {
 
-public class JoinListener implements Listener {
-
-    @EventHandler
-    public void onJoin(PlayerJoinEvent event) {
-
-        event.getPlayer().sendMessage(
-                MessageUtils.getMessage(Messages.JOIN_MESSAGE, event.getPlayer())
-        );
+        MessageUtils.send(event.getPlayer(), Messages.FIRST_JOIN);
+        return;
 
     }
+
+    MessageUtils.send(event.getPlayer(), Messages.JOIN);
 
 }
