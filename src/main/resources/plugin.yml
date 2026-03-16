@@ -1,5 +1,5 @@
 name: HomieCraft
 version: 1.0
-main: de.LucaMaximal.HomieCraft.Main
+main: de.lucamaximal.homiecraft.Main
 api-version: 1.21
 author: LucaMaximal
