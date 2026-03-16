@@ -14,7 +14,7 @@ public final class Main extends JavaPlugin {
 
         saveDefaultConfig();
 
-        getServer().getPluginManager().registerEvents(new JoinListener(), this);
+        registerListeners();
 
         getLogger().info("HomieCraft Plugin gestartet!");
     }
@@ -22,6 +22,10 @@ public final class Main extends JavaPlugin {
     @Override
     public void onDisable() {
         getLogger().info("HomieCraft Plugin gestoppt!");
+    }
+
+    private void registerListeners() {
+        getServer().getPluginManager().registerEvents(new JoinListener(), this);
     }
 
     public static Main getInstance() {
