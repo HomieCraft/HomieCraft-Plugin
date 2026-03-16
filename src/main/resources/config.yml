@@ -2,4 +2,10 @@ messages:
 
   prefix: "<gray>[<aqua><bold>HomieCraft</bold></aqua>] </gray>"
 
-  join: "<green>Willkommen auf HomieCraft, <yellow>%player_name%</yellow>!"
+  join: "<green>Willkommen <yellow>%player_name%</yellow>!"
+
+  first-join: "<gold>Willkommen zum ersten Mal auf HomieCraft <yellow>%player_name%</yellow>!"
+
+  leave: "<red>%player_name% hat den Server verlassen!"
+
+  reload: "<green>Config wurde neu geladen!"
