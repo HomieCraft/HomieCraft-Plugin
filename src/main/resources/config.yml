@@ -1,3 +1,5 @@
 messages:
-  prefix: "&8[&b&lHomieCraft&8] &7"
-  join: "&aWillkommen auf HomieCraft, &e%player%&a!"
+
+  prefix: "<gray>[<aqua><bold>HomieCraft</bold></aqua>] </gray>"
+
+  join: "<green>Willkommen auf HomieCraft, <yellow>%player_name%</yellow>!"
