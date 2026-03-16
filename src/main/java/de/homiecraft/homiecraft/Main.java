@@ -1,4 +1,4 @@
-package de.deinname.meinplugin;
+package de.homiecraft.homiecraft;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
