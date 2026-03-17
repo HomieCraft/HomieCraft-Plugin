@@ -18,3 +18,4 @@ messages:
   spawn_set: "<green>Spawn wurde gesetzt!"
   spawn_teleport: "<red>Du wurdest zum Spawn teleportiert!"
   no_spawn_set: "<red>Es wurde noch kein Spawn gesetzt!"
+  spawn_teleport: "<aqua>Du wurdest zum Spawn teleportiert!"
