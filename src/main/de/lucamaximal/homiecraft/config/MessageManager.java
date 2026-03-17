@@ -51,4 +51,18 @@ public class MessageManager {
 
         return miniMessage.deserialize(msg);
     }
+
+    // Für Konsole (kein Player!)
+    public Component getMessage(String key) {
+        String msg = config.getString("messages." + key);
+
+        if (msg == null) {
+            return Component.text("Message not found: " + key);
+        }
+
+        String prefix = config.getString("messages.prefix", "");
+        msg = prefix + msg;
+
+        return miniMessage.deserialize(msg);
+    }
 }
