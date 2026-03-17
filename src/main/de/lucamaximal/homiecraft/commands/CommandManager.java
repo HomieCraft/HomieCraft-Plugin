@@ -1,6 +1,6 @@
 package de.lucamaximal.homiecraft.commands;
 
-import de.lucamaximal.homiecraft.Main;
+import de.lucamaximal.homiecraft.core.Main;
 
 public class CommandManager {
 
