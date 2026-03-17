@@ -18,6 +18,12 @@ public class TpaManager {
     // target -> sender
     private final Map<UUID, UUID> requests = new HashMap<>();
     private final Map<UUID, Location> teleporting = new HashMap<>();
+    
+    // NUR DIE NEUEN FELDER OBEN HINZUFÜGEN
+    
+    private final Map<UUID, UUID> hereRequests = new HashMap<>();
+    private final Set<UUID> autoAccept = new HashSet<>();
+    private final Set<UUID> toggleOff = new HashSet<>();
 
     public TpaManager(Main plugin) {
         this.plugin = plugin;
