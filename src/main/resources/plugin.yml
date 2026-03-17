@@ -1,5 +1,10 @@
 name: HomieCraft
-version: 1.0
+version: Alpha-1.0
 main: de.lucamaximal.homiecraft.Main
 api-version: 1.21
 author: LucaMaximal
+commands:
+  spawn:
+    description: Teleportiert dich zum Spawn
+  setspawn:
+    description: Setzt den Spawn
