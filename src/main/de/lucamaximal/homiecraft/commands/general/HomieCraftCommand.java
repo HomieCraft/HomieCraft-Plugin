@@ -3,6 +3,7 @@ package de.lucamaximal.homiecraft.commands.general;
 import de.lucamaximal.homiecraft.commands.general.subcommands.HelpSubCommand;
 import de.lucamaximal.homiecraft.commands.general.subcommands.ReloadSubCommand;
 import de.lucamaximal.homiecraft.commands.general.subcommands.SubCommand;
+import de.lucamaximal.homiecraft.commands.general.subcommands.SpawnSubCommand;
 import de.lucamaximal.homiecraft.core.Main;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -22,6 +23,7 @@ public class HomieCraftCommand implements CommandExecutor {
         // 🔥 Subcommands registrieren
         subCommands.add(new ReloadSubCommand(plugin));
         subCommands.add(new HelpSubCommand(plugin));
+        subCommands.add(new SpawnSubCommand(plugin));
     }
 
     @Override
