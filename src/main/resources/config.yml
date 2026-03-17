@@ -20,7 +20,6 @@ messages:
   no_spawn_set: "<red>Es wurde noch kein Spawn gesetzt!"
 
   tpa_sent: "<gray>Anfrage an <red>%target%</red> gesendet."
-  tpa_received: "<red>%player%</red> möchte sich zu dir teleportieren."
   tpa_accept: "<green>Anfrage angenommen."
   tpa_accepted: "<green>Teleport wird gestartet..."
   tpa_deny: "<red>Anfrage abgelehnt."
@@ -32,12 +31,13 @@ messages:
   tpa_self: "<red>Du kannst dir selbst keine Anfrage senden."
   tpa_offline: "<red>Spieler ist offline."
   tpahere_sent: "<gray>Anfrage gesendet an <red>%target%</red> (zu dir)"
-  tpahere_received: "<red>%player%</red> möchte dass du zu ihm kommst"
   tpa_auto_on: "<green>Auto-TPA aktiviert"
   tpa_auto_off: "<red>Auto-TPA deaktiviert"
   tpa_toggle_on: "<green>TPA aktiviert"
   tpa_toggle_off: "<red>TPA deaktiviert"
-  tpa_blocked: "<red>Dieser Spieler blockiert TPA-Anfragen"
+  tpa_blocked: "<red>Dieser Spieler blockiert TPA-Anfragen."
+  tpa_received: "<gray>----------\n<red>%player%</red> möchte sich zu dir teleportieren\n\n<green><click:run_command:'/tpaccept'><hover:show_text:'<gray>Klicke zum Annehmen'>[Annehmen]</hover></click> <red><click:run_command:'/tpdeny'><hover:show_text:'<gray>Klicke zum Ablehnen'>[Ablehnen]</hover></click>\n<gray>----------"
+  tpahere_received: "<gray>----------\n<red>%player%</red> möchte dass du zu ihm kommst\n\n<green><click:run_command:'/tpaccept'><hover:show_text:'<gray>Klicke zum Annehmen'>[Annehmen]</hover></click> <red><click:run_command:'/tpdeny'><hover:show_text:'<gray>Klicke zum Ablehnen'>[Ablehnen]</hover></click>\n<gray>----------"
 
 sounds:
   tpa_send: "ENTITY_EXPERIENCE_ORB_PICKUP"
