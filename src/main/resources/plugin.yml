@@ -24,6 +24,21 @@ commands:
   tpdeny:
     description: Lehne eine Teleport-Anfrage ab
 
+  tpahere:
+    description: Teleportiere Spieler zu dir
+
+  tpaall:
+    description: Anfrage an alle Spieler
+
+  tpahereall:
+    description: Alle Spieler zu dir teleportieren
+
+  tpaauto:
+    description: Auto Accept
+
+  tpatoggle:
+    description: Blockiere Anfragen
+
 permissions:
   homiecraft.spawn:
     description: Erlaubt /spawn
@@ -47,4 +62,24 @@ permissions:
 
   homiecraft.tpdeny:
     description: Erlaubt /tpdeny
+    default: true
+
+  homiecraft.tpahere:
+    description: Erlaubt /tpahere
+    default: true
+
+  homiecraft.tpaall:
+    description: Erlaubt /tpaall
+    default: op
+
+  homiecraft.tpahereall:
+    description: Erlaubt /tpahereall
+    default: op
+
+  homiecraft.tpaauto:
+    description: Erlaubt /tpaauto
+    default: true
+
+  homiecraft.tpatoggle:
+    description: Erlaubt /tpatoggle
     default: true
