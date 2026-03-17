@@ -26,6 +26,12 @@ public class SpawnCommand implements CommandExecutor {
             return true;
         }
 
+        // 🔐 Permission Check
+        if (!player.hasPermission("homiecraft.spawn")) {
+            player.sendMessage(messageManager.getMessage("no_permission"));
+            return true;
+        }
+
         if (!plugin.getConfig().contains("spawn")) {
             player.sendMessage(messageManager.getMessage(player, "no_spawn_set"));
             return true;
