@@ -1,5 +1,6 @@
 package de.lucamaximal.homiecraft.commands;
 
+import de.lucamaximal.homiecraft.commands.general.HomieCraftCommand;
 import de.lucamaximal.homiecraft.core.Main;
 
 public class CommandManager {
@@ -15,6 +16,7 @@ public class CommandManager {
         plugin.getCommand("homiecraft")
                 .setExecutor(new HomieCraftCommand(plugin));
 
+        plugin.getCommand("hc")
+                .setExecutor(new HomieCraftCommand(plugin));
     }
-
 }
