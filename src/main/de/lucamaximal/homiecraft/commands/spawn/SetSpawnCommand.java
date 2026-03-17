@@ -25,6 +25,12 @@ public class SetSpawnCommand implements CommandExecutor {
             return true;
         }
 
+        // 🔐 Permission Check
+        if (!player.hasPermission("homiecraft.setspawn")) {
+            player.sendMessage(messageManager.getMessage("no_permission"));
+            return true;
+        }
+
         var loc = player.getLocation();
 
         plugin.getConfig().set("spawn.world", loc.getWorld().getName());
