@@ -9,13 +9,12 @@ messages:
   no_permission: "<red>Du bist nicht dazu berechtigt."
   unknown_command: "<red>Diesen Befehl gibt es nicht! Mache <dark_red>/help</dark_red> für Hilfe."
 
-  join: "<red>Der Spieler <red><italic>%player% <red>hat den Server betreten!"
-  first_join: "<aqua>%player% <red>ist zum ersten Mal auf HomieCraft!"
-  leave: "<red>Der Spieler <red><italic>%player% <red>hat den Server verlassen!"
+  join: "<red><italic>%player% </i><gray>hat den Server betreten!"
+  first_join: "<aqua><i>%player% </i><purple>ist zum ersten Mal auf HomieCraft!"
+  leave: "<red><italic>%player% </i><gray>hat den Server verlassen!"
 
   diamonds_found: "<red>Du hast <aqua>%amount% Diamanten <red>gefunden!"
   
   spawn_set: "<green>Spawn wurde gesetzt!"
-  spawn_teleport: "<red>Du wurdest zum Spawn teleportiert!"
+  spawn_teleport: "<gray>Du wurdest zum Spawn teleportiert!"
   no_spawn_set: "<red>Es wurde noch kein Spawn gesetzt!"
-  spawn_teleport: "<aqua>Du wurdest zum Spawn teleportiert!"
