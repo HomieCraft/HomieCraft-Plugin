@@ -1,5 +1,6 @@
 package de.lucamaximal.homiecraft.core;
 
+import de.lucamaximal.homiecraft.commands.CommandManager;
 import de.lucamaximal.homiecraft.config.MessageManager;
 import de.lucamaximal.homiecraft.listener.JoinListener;
 import de.lucamaximal.homiecraft.listener.LeaveListener;
@@ -16,8 +17,10 @@ public final class Main extends JavaPlugin {
 
         instance = this;
 
+        // Config laden
         saveDefaultConfig();
 
+        // MessageManager initialisieren
         messageManager = new MessageManager(getConfig());
 
         // Listener registrieren
@@ -29,21 +32,32 @@ public final class Main extends JavaPlugin {
                 new LeaveListener(messageManager), this
         );
 
-        // Plugin Start Message (für Konsole + Server)
-        Bukkit.getConsoleSender().sendMessage(messageManager.getMessage("plugin_enable"));
-        //Commands
-        getCommand("spawn").setExecutor(
-        new SpawnCommand(this, messageManager)
-        );
-        
-        getCommand("setspawn").setExecutor(
-            new SetSpawnCommand(this, messageManager)
+        // Commands registrieren
+        new CommandManager(this).registerCommands();
+
+        // Start Message
+        Bukkit.getConsoleSender().sendMessage(
+                messageManager.getMessage("plugin_enable")
         );
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(messageManager.getMessage("plugin_disable"));
+        Bukkit.getConsoleSender().sendMessage(
+                messageManager.getMessage("plugin_disable")
+        );
+    }
+
+    // 🔥 Reload Methode (sehr wichtig)
+    public void reloadPlugin() {
+
+        // Config neu laden
+        reloadConfig();
+
+        // MessageManager neu erstellen (wichtig!)
+        messageManager = new MessageManager(getConfig());
+
+        // Optional: hier später weitere Systeme reloaden
     }
 
     public static Main getInstance() {
