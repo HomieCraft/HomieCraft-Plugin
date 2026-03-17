@@ -31,6 +31,9 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(
                 new LeaveListener(messageManager), this
         );
+        getServer().getPluginManager().registerEvents(
+                new UnknownCommandListener(this), this
+        );
 
         // Commands registrieren
         new CommandManager(this).registerCommands();
