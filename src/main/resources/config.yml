@@ -9,3 +9,7 @@ messages:
   leave: "<red>Der Spieler <red><italic>%player% <red>hat den Server verlassen!"
 
   diamonds_found: "<red>Du hast <aqua>%amount% Diamanten <red>gefunden!"
+  
+  spawn_set: "<green>Spawn wurde gesetzt!"
+  spawn_teleport: "<red>Du wurdest zum Spawn teleportiert!"
+  no_spawn_set: "<red>Es wurde noch kein Spawn gesetzt!"
