@@ -1,8 +1,9 @@
 name: HomieCraft
 version: Alpha-1.0
-main: de.lucamaximal.homiecraft.Main
+main: de.lucamaximal.homiecraft.core.Main
 api-version: 1.21
 author: LucaMaximal
+
 commands:
   homiecraft:
     description: Hauptcommand
@@ -13,6 +14,15 @@ commands:
 
   setspawn:
     description: Setzt den Spawn
+
+  tpa:
+    description: Sende eine Teleport-Anfrage
+
+  tpaccept:
+    description: Akzeptiere eine Teleport-Anfrage
+
+  tpdeny:
+    description: Lehne eine Teleport-Anfrage ab
 
 permissions:
   homiecraft.spawn:
@@ -26,3 +36,15 @@ permissions:
   homiecraft.reload:
     description: Erlaubt /hc reload
     default: op
+
+  homiecraft.tpa:
+    description: Erlaubt /tpa
+    default: true
+
+  homiecraft.tpaccept:
+    description: Erlaubt /tpaccept
+    default: true
+
+  homiecraft.tpdeny:
+    description: Erlaubt /tpdeny
+    default: true
