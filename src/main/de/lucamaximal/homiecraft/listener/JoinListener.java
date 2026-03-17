@@ -1,31 +1,30 @@
 package de.lucamaximal.homiecraft.listener;
 
-import de.lucamaximal.homiecraft.util.MessageUtils;
-import de.lucamaximal.homiecraft.util.Messages;
+import de.lucamaximal.homiecraft.config.MessageManager;
+import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
 
 public class JoinListener implements Listener {
+
+    private final MessageManager messageManager;
+
+    public JoinListener(MessageManager messageManager) {
+        this.messageManager = messageManager;
+    }
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
 
+        // Vanilla Nachricht ausmachen
+        event.joinMessage(null);
+
         if (!event.getPlayer().hasPlayedBefore()) {
-            // First Join Message
-            MessageUtils.send(event.getPlayer(), Messages.FIRST_JOIN);
+            Bukkit.broadcast(messageManager.getMessage(event.getPlayer(), "first_join"));
             return;
         }
 
-        // Normal Join Message
-        MessageUtils.send(event.getPlayer(), Messages.JOIN);
-    }
-
-    @EventHandler
-    public void onQuit(org.bukkit.event.player.PlayerQuitEvent event) {
-
-        // Leave Message
-        MessageUtils.send(event.getPlayer(), Messages.LEAVE);
+        Bukkit.broadcast(messageManager.getMessage(event.getPlayer(), "join"));
     }
 }
