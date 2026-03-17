@@ -18,3 +18,23 @@ messages:
   spawn_set: "<green>Spawn wurde gesetzt!"
   spawn_teleport: "<gray>Du wurdest zum Spawn teleportiert!"
   no_spawn_set: "<red>Es wurde noch kein Spawn gesetzt!"
+
+  tpa_sent: "<gray>Anfrage an <red>%target%</red> gesendet."
+  tpa_received: "<red>%player%</red> möchte sich zu dir teleportieren."
+  tpa_accept: "<green>Anfrage angenommen."
+  tpa_accepted: "<green>Teleport wird gestartet..."
+  tpa_deny: "<red>Anfrage abgelehnt."
+  tpa_denied: "<red>Deine Anfrage wurde abgelehnt."
+  tpa_expired: "<red>Anfrage abgelaufen."
+  tpa_none: "<red>Keine Anfrage vorhanden."
+  tpa_cancel_move: "<red>Teleport abgebrochen, du hast dich bewegt."
+  tpa_teleport: "<green>Teleportiert!"
+  tpa_self: "<red>Du kannst dir selbst keine Anfrage senden."
+  tpa_offline: "<red>Spieler ist offline."
+
+sounds:
+  tpa_send: "ENTITY_EXPERIENCE_ORB_PICKUP"
+  tpa_receive: "BLOCK_NOTE_BLOCK_PLING"
+  tpa_accept: "ENTITY_PLAYER_LEVELUP"
+  tpa_deny: "BLOCK_ANVIL_LAND"
+  tpa_countdown: "BLOCK_NOTE_BLOCK_HAT"
