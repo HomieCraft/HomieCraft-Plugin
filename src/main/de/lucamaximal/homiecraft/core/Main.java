@@ -31,6 +31,14 @@ public final class Main extends JavaPlugin {
 
         // Plugin Start Message (für Konsole + Server)
         Bukkit.getConsoleSender().sendMessage(messageManager.getMessage("plugin_enable"));
+        //Commands
+        getCommand("spawn").setExecutor(
+        new SpawnCommand(this, messageManager)
+        );
+        
+        getCommand("setspawn").setExecutor(
+            new SetSpawnCommand(this, messageManager)
+        );
     }
 
     @Override
