@@ -16,16 +16,20 @@ public class HomieCraftCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        // /hc reload
+        // 🔐 Permission für reload
         if (args.length == 1 && args[0].equalsIgnoreCase("reload")) {
 
-            plugin.reloadPlugin();
+            if (!sender.hasPermission("homiecraft.reload")) {
+                sender.sendMessage(plugin.getMessageManager().getMessage("no_permission"));
+                return true;
+            }
 
-            sender.sendMessage(plugin.getMessageManager().getMessage("plugin_enable"));
+            plugin.reloadPlugin();
+            sender.sendMessage(plugin.getMessageManager().getMessage("reload"));
             return true;
         }
 
-        // Default (Help)
+        // Help
         sender.sendMessage(plugin.getMessageManager().getMessage("help"));
         return true;
     }
