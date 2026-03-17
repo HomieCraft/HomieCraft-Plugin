@@ -13,3 +13,16 @@ commands:
 
   setspawn:
     description: Setzt den Spawn
+
+permissions:
+  homiecraft.spawn:
+    description: Erlaubt /spawn
+    default: true
+
+  homiecraft.setspawn:
+    description: Erlaubt /setspawn
+    default: op
+
+  homiecraft.reload:
+    description: Erlaubt /hc reload
+    default: op
