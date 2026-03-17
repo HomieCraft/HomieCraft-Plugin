@@ -1,11 +1,11 @@
 messages:
+  prefix: "<gray>[<aqua><bold>HomieCraft <light_purple>SMP<gray>] "
 
-  prefix: "<gray>[<aqua><bold>HomieCraft</bold></aqua>] </gray>"
+  plugin_enable: "<green>HomieCraft Plugin wurde gestartet!"
+  plugin_disable: "<red>HomieCraft Plugin wurde gestoppt!"
 
-  join: "<green>Willkommen <yellow>%player_name%</yellow>!"
+  join: "<red>Der Spieler <red><italic>%player% <red>hat den Server betreten!"
+  first_join: "<aqua>%player% <red>ist zum ersten Mal auf HomieCraft!"
+  leave: "<red>Der Spieler <red><italic>%player% <red>hat den Server verlassen!"
 
-  first-join: "<gold>Willkommen zum ersten Mal auf HomieCraft <yellow>%player_name%</yellow>!"
-
-  leave: "<red>%player_name% hat den Server verlassen!"
-
-  reload: "<green>Config wurde neu geladen!"
+  diamonds_found: "<red>Du hast <aqua>%amount% Diamanten <red>gefunden!"
