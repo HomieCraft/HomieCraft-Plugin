@@ -5,6 +5,7 @@ messages:
   plugin_disable: "<red>HomieCraft Plugin wurde gestoppt!"
   
   help: "<aqua>HomieCraft Commands: <gray>/spawn, /setspawn, /tpa ..."
+  reload: "<green>Plugin wurde neu geladen!"
 
   join: "<red>Der Spieler <red><italic>%player% <red>hat den Server betreten!"
   first_join: "<aqua>%player% <red>ist zum ersten Mal auf HomieCraft!"
