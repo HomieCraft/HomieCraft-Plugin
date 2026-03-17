@@ -17,7 +17,6 @@ public class JoinListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
 
-        // Vanilla Nachricht ausmachen
         event.joinMessage(null);
 
         if (!event.getPlayer().hasPlayedBefore()) {
