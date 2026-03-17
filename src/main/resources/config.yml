@@ -7,7 +7,7 @@ messages:
   help: "<aqua>HomieCraft Commands: <gray>/spawn, /setspawn, /tpa ..."
   reload: "<green>Plugin wurde neu geladen!"
   no_permission: "<red>Du bist nicht dazu berechtigt."
-  unknown_command: "<red>Unbekannter Command!"
+  unknown_command: "<red>Diesen Befehl gibt es nicht! Mache <dark_red>/help</dark_red> für Hilfe."
 
   join: "<red>Der Spieler <red><italic>%player% <red>hat den Server betreten!"
   first_join: "<aqua>%player% <red>ist zum ersten Mal auf HomieCraft!"
