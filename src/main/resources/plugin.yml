@@ -4,7 +4,12 @@ main: de.lucamaximal.homiecraft.Main
 api-version: 1.21
 author: LucaMaximal
 commands:
+  homiecraft:
+    description: Hauptcommand
+    aliases: [hc]
+
   spawn:
-    description: Teleportiert dich zum Spawn
+    description: Teleport zum Spawn
+
   setspawn:
     description: Setzt den Spawn
