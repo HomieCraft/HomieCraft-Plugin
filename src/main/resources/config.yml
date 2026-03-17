@@ -3,6 +3,8 @@ messages:
 
   plugin_enable: "<green>HomieCraft Plugin wurde gestartet!"
   plugin_disable: "<red>HomieCraft Plugin wurde gestoppt!"
+  
+  help: "<aqua>HomieCraft Commands: <gray>/spawn, /setspawn, /tpa ..."
 
   join: "<red>Der Spieler <red><italic>%player% <red>hat den Server betreten!"
   first_join: "<aqua>%player% <red>ist zum ersten Mal auf HomieCraft!"
