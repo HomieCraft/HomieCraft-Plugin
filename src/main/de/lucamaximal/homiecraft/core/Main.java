@@ -1,77 +1,49 @@
 package de.lucamaximal.homiecraft.core;
 
 import de.lucamaximal.homiecraft.commands.CommandManager;
-import de.lucamaximal.homiecraft.config.MessageManager;
-import de.lucamaximal.homiecraft.listener.JoinListener;
-import de.lucamaximal.homiecraft.listener.LeaveListener;
-import org.bukkit.Bukkit;
+import de.lucamaximal.homiecraft.placeholder.HomieCraftExpansion;
+import de.lucamaximal.homiecraft.tpa.TpaManager;
+import de.lucamaximal.homiecraft.util.MessageManager;
+import de.lucamaximal.homiecraft.util.PlaceholderManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Main extends JavaPlugin {
+public class Main extends JavaPlugin {
 
     private static Main instance;
+
     private MessageManager messageManager;
+    private PlaceholderManager placeholderManager;
+    private TpaManager tpaManager;
 
     @Override
     public void onEnable() {
 
         instance = this;
 
-        // Config laden
         saveDefaultConfig();
 
-        // MessageManager initialisieren
-        messageManager = new MessageManager(getConfig());
+        this.placeholderManager = new PlaceholderManager(this);
+        this.messageManager = new MessageManager(this);
+        this.tpaManager = new TpaManager(this);
 
-        // Listener registrieren
-        getServer().getPluginManager().registerEvents(
-                new JoinListener(messageManager), this
-        );
-
-        getServer().getPluginManager().registerEvents(
-                new LeaveListener(messageManager), this
-        );
-        getServer().getPluginManager().registerEvents(
-                new UnknownCommandListener(this), this
-        );
-        
-        TpaManager tpaManager = new TpaManager(this);
-        
-        getCommand("tpa").setExecutor(new TpaCommand(tpaManager));
-        getCommand("tpaccept").setExecutor(new TpAcceptCommand(tpaManager));
-        getCommand("tpdeny").setExecutor(new TpDenyCommand(tpaManager));
-        
-        getServer().getPluginManager().registerEvents(
-            new TeleportListener(tpaManager), this
-        );
-
-        // Commands registrieren
         new CommandManager(this).registerCommands();
 
-        // Start Message
-        Bukkit.getConsoleSender().sendMessage(
-                messageManager.getMessage("plugin_enable")
-        );
+        if (getServer().getPluginManager().isPluginEnabled("PlaceholderAPI")) {
+            new HomieCraftExpansion(this).register();
+        }
+
+        // ✅ Config Message statt hardcoded
+        getLogger().info(messageManager.getRaw("plugin_enable"));
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(
-                messageManager.getMessage("plugin_disable")
-        );
+        getLogger().info(messageManager.getRaw("plugin_disable"));
     }
 
-    // 🔥 Reload Methode (sehr wichtig)
-    public void reloadPlugin() {
-
-        // Config neu laden
-        reloadConfig();
-
-        // MessageManager neu erstellen (wichtig!)
-        messageManager = new MessageManager(getConfig());
-
-        // Optional: hier später weitere Systeme reloaden
-    }
+    // =========================
+    // GETTER
+    // =========================
 
     public static Main getInstance() {
         return instance;
@@ -79,5 +51,27 @@ public final class Main extends JavaPlugin {
 
     public MessageManager getMessageManager() {
         return messageManager;
+    }
+
+    public PlaceholderManager getPlaceholderManager() {
+        return placeholderManager;
+    }
+
+    public TpaManager getTpaManager() {
+        return tpaManager;
+    }
+
+    // =========================
+    // RELOAD
+    // =========================
+
+    public void reloadPlugin() {
+
+        reloadConfig();
+
+        this.placeholderManager = new PlaceholderManager(this);
+        this.messageManager = new MessageManager(this);
+
+        getLogger().info(messageManager.getRaw("plugin_enable"));
     }
 }
