@@ -34,6 +34,11 @@ public class Main extends JavaPlugin {
 
         // ✅ Config Message statt hardcoded
         getLogger().info(messageManager.getRaw("plugin_enable"));
+
+        getServer().getPluginManager().registerEvents(
+            new UnknownCommandListener(this),
+            this
+        );
     }
 
     @Override
