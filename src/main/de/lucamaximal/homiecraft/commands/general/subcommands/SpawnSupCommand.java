@@ -25,7 +25,6 @@ public class SpawnSubCommand implements SubCommand {
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-
         if (!(sender instanceof Player player)) {
             sender.sendMessage("Only players!");
             return;
