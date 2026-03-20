@@ -23,7 +23,6 @@ public class ReloadSubCommand implements SubCommand {
 
     @Override
     public void execute(CommandSender sender, String[] args) {
-
         if (!sender.hasPermission(getPermission())) {
             sender.sendMessage(plugin.getMessageManager().getMessage("no_permission"));
             return;
