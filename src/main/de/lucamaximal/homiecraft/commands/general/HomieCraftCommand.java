@@ -28,14 +28,12 @@ public class HomieCraftCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
         if (args.length == 0) {
             sender.sendMessage(plugin.getMessageManager().getMessage("help"));
             return true;
         }
 
         for (SubCommand sub : subCommands) {
-
             if (sub.getName().equalsIgnoreCase(args[0])) {
                 sub.execute(sender, args);
                 return true;
