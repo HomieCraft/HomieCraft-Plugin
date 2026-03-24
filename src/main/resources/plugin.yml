@@ -1,8 +1,8 @@
 name: HomieCraft
-version: Alpha-1.0
+version: '1.0-Alpha'
 main: de.lucamaximal.homiecraft.core.Main
-api-version: 1.21
-author: LucaMaximal
+api-version: '1.21'
+author: [ LucaMaximal ]
 
 commands:
   homiecraft:
